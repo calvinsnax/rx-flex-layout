@@ -42,6 +42,21 @@
 				<description>흔히 Primary color라고 불리는 대표 색상입니다. 대부분의 포인트 컬러로 사용됩니다.</description>
 			</var>
 
+			<var name="font_family" type="select">
+        <title xml:lang="ko">기본 폰트</title>
+				<description>레이아웃에서 사용할 폰트를 선택하세요. ('시스템 폰트 사용' 항목 선택 시 폰트를 불러오지 않아 로딩 속도가 빨라집니다.)</description>
+
+        <options value="">
+          <title xml:lang="ko">아리따움 돋움 (기본)</title>
+        </options>
+				<options value="noto_sans">
+          <title xml:lang="ko">Noto Sans KR</title>
+        </options>
+        <options value="none">
+          <title xml:lang="ko">시스템 폰트 사용</title>
+        </options>
+      </var>
+
 			<var name="container_width" type="text">
         <title xml:lang="ko">최대폭 설정</title>
         <description xml:lang="ko">웹 페이지의 최대폭을 설정합니다. (기본값: 1200px / 실제 가로폭은 최대값 1200px에 좌우 여백을 모두 더한 값인 64px을 빼 1136px이 됩니다.)</description>

@@ -24,11 +24,24 @@
     $theme->variables['color-primary'] = $layout_info->primary_color;
 }
 
-{@ // 외부 라이브러리 }
-<load target="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js" type="body" />
+
+<!--@if($layout_info->font_family === 'noto_sans')-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+{@
+  $theme->variables['font-family'] = "'Noto Sans KR', 'Noto Sans Korean', -apple-system, 'SF Pro Display', 'Helvetica Neue',  'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', 'Malgun Gothic', sans-serif";
+}
+<!--@elseif($layout_info->font_family === 'none')-->
+{@
+  $theme->variables['font-family'] = "-apple-system, 'SF Pro Display', 'Helvetica Neue',  'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', 'Malgun Gothic', sans-serif";
+}
+<!--@end-->
+
+
+{@ // JS }
 <load target="assets/js/jquery.cookie.js" type="body" />
 
-{@ // BASE CSS IMPORT }
+{@ // CSS }
 <load target="assets/css/base.scss" vars="$theme->variables" />
 <load target="assets/css/typography.scss" vars="$theme->variables" />
 <load target="assets/css/layout.scss" vars="$theme->variables" />
@@ -37,6 +50,9 @@
 <load target="assets/css/button.scss" vars="$theme->variables" />
 <load target="assets/css/link.scss" vars="$theme->variables" />
 
-{@ // Components }
+{@ // COMPONENTS }
 <include target="components/common/dropdown/dropdown.html" />
 <include target="components/common/dialog/dialog.html" />
+
+{@ // 외부 라이브러리 }
+<script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>

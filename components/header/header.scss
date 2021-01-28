@@ -2,7 +2,7 @@ $header-height: 60px;
 $header-blur: saturate(180%) blur(5px);
 
 .app-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -14,7 +14,9 @@ $header-blur: saturate(180%) blur(5px);
   width: 100%;
   height: $header-height;
 
-  background-color: $color-gray-050;
+  background-color: rgba($color-gray-050, 0.8);
+  -webkit-backdrop-filter: $header-blur;
+  backdrop-filter: $header-blur;
 
   @media (max-width: $mobile-w) {
     height: 52px;
@@ -23,10 +25,16 @@ $header-blur: saturate(180%) blur(5px);
   &__divider {
     flex: 1;
   }
+
+  &-space {
+    position: relative;
+    height: $header-height;
+  }
 }
 
 .app-header-container {
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
@@ -37,13 +45,34 @@ $header-blur: saturate(180%) blur(5px);
   padding-right: $base-padding;
 
   @media (max-width: $mobile-w) {
-    padding-left: 1rem;
-    padding-right: 0.5rem;
+    padding-left: 1.25rem;
+    padding-right: 0.75rem;
   }
 
   .app-header--expand & {
     max-width: 100%;
   }
+}
+
+.app-header__left,
+.app-header__right,
+.app-header__center {
+  display: flex;
+  align-items: center;
+}
+
+.app-header__left,
+.app-header__right {
+  width: 250px;
+}
+
+.app-header__right {
+  justify-content: flex-end;
+}
+
+.app-header__center {
+  flex: 1;
+  justify-content: center;
 }
 
 .app-header-logo {

@@ -39,8 +39,8 @@ ion-icon {
   margin: 0 auto;
 
   @media (max-width: $mobile-w) {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: $base-padding-m;
+    padding-right: $base-padding-m;
   }
 
   zoom: 1;

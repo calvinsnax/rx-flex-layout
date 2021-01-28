@@ -3,8 +3,9 @@
     // 변수 시스템
     public function getVariables($darkMode) {
       $base = array(
-        'base-container' => '1200px',
+        'base-container' => '1000px',
         'base-padding' => '2rem',
+        'base-padding-m' => '1.25rem',
       );
 
       $font = array(

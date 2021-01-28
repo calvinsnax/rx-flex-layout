@@ -9,16 +9,21 @@
 
 <header class="app-header {$header_expand}">
   <div class="app-header-container">
-    <include target="header-logo.html" />
-    <include target="header-nav.html" />
+    <div class="app-header__left">
+      <include target="header-logo.html" />
+    </div>
 
-    <div class="app-header__divider"></div>
+    <div class="app-header__center">
+      <include target="header-nav.html" />
+    </div>
 
-    <include target="header-right/header-right.html" />
-
-    <include target="header-menu/header-menu-icon.html" />
+    <div class="app-header__right">
+      <include target="header-right/header-right.html" />
+      <include target="header-menu/header-menu-icon.html" />
+    </div>
   </div>
 </header>
+<div class="app-header-space"></div>
 
 <include target="header-menu/header-menu.html" />
 
