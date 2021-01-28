@@ -154,5 +154,21 @@
   			</options>
   		</var>
 		</group>
+
+		<group>
+			<title xml:lang="ko">부가기능</title>
+
+			<var name="board_thumbnail" type="radio">
+  			<title xml:lang="ko">게시물 상단에 썸네일 표시</title>
+        <description xml:lang="ko">게시판 스킨과 상관없이 썸네일이 있는 게시물 열람 시 레이아웃 최상단에 게시물의 썸네일을 출력합니다. (라이믹스 2.0.5 이상 권장)</description>
+
+  			<options value="">
+  				<title xml:lang="ko">사용안함 (기본값)</title>
+  			</options>
+  			<options value="Y">
+  				<title xml:lang="ko">사용</title>
+  			</options>
+  		</var>
+		</group>
 	</extra_vars>
 </layout>

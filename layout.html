@@ -6,7 +6,10 @@
 
 <include target="components/header/header.html" />
 
-<main class="app-main app-container">{$content}</main>
+<main>
+  <include target="components/board-thumbnail/board-thumbnail.html" />
+  <div class="app-main app-container">{$content}</div>
+</main>
 
 <include target="components/footer/footer.html" />
 <include target="components/ie-message.html" />

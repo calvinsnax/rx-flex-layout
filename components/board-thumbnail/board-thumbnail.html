@@ -1,0 +1,7 @@
+<!--@if($is_board == 'Y' && $layout_info->board_thumbnail == 'Y' && $oDocument->thumbnailExists())-->
+<load target="board-thumbnail.scss" vars="$theme->variables" />
+
+<div class="app-board-thumbnail">
+  <img src="{$oDocument->getThumbnail('1200px', '600px', 'fill')}" alt="">
+</div>
+<!--@end-->
