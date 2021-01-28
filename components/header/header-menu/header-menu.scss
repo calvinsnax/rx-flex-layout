@@ -1,0 +1,250 @@
+.app-header-menu-icon {
+  display: none;
+  cursor: pointer;
+  flex: 0 0 auto;
+
+  width: 2.5rem;
+  height: 1.75rem;
+  margin: 0 0 0 0.25rem;
+
+  color: $color-grey-080;
+  font-size: 1.5rem;
+
+  border: none;
+  outline: none;
+  background-color: $color-background;
+  border-radius: 0;
+
+  border-left: 1px solid $color-grey-030;
+
+  @media (max-width: $mobile-w) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+.app-header-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(black, 0.5);
+  
+  transition: .3s ease;
+
+  &__close {
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0.5rem;
+    margin: 0 0 1rem;
+    border: none;
+    outline: none;
+
+    color: $color-black;
+    background-color: $color-grey-030;
+    border-radius: $border-radius-3;
+
+    font-size: 1.5rem;
+    transition: .2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  &__auth {
+    padding-top: 1rem;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $color-grey-030;
+
+    .app-login {
+      display: block;
+      color: $color-grey-080;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      margin-bottom: 0.25rem;
+    }
+    .app-signup {
+      color: $color-primary;
+      font-size: 0.75rem;
+      text-decoration: none;
+    }
+  }
+
+  &__content {
+    flex: 0 0 auto;
+    max-width: 240px;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    background-color: $color-background;
+  }
+
+  &__outside {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+}
+
+
+
+// 헤더 메뉴 nav
+// ──────────────────────────────────────────────────────────────────────────
+.app-header-menu-nav {
+  margin-bottom: 1.25rem;
+
+  & > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    & > li {
+      margin-bottom: 0.25rem;
+
+      & > .app-header-menu-nav-item {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        transition: .2s ease;
+      }
+
+      & > .app-header-menu-nav-item > a {
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        color: $color-grey-080;
+        font-size: 1rem;
+        text-decoration: none;
+
+        & > ion-icon {
+          font-size: 1.25rem;
+          margin-right: 0.75rem;
+          --ionicon-stroke-width: 2.5rem;
+        }
+      }
+
+      .app-header-menu-nav-more {
+        cursor: pointer;
+        flex: 0 0 auto;
+        padding-left: 0.25rem;
+
+        color: $color-grey-040;
+        font-size: 0.875rem;
+        --ionicon-stroke-width: 100px;
+      }
+      
+      &.active > div > a {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+.app-header-menu-nav-child {
+  display: none;
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  margin-bottom: 0.75rem;
+
+  &.active {
+    display: block;
+  }
+
+  & > ul {
+    list-style-type: none;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: $color-grey-010;
+    border-radius: $border-radius-1;
+
+    & > li {
+      padding: 0.5rem;
+      margin-bottom: 0.25rem;
+      border-radius: $border-radius-1;
+      transition: .2s ease;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      & > a {
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        color: $color-grey-080;
+        font-size: 0.875rem;
+        text-decoration: none;
+      }
+      
+      &.active > a {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+
+// 비활성화 상태
+// ──────────────────────────────────────────────────────────────────────────
+.app-header-menu {
+  opacity: 0;
+  visibility: hidden;
+  user-select: none;
+  pointer-events: none;
+
+  .app-header-menu__content {
+    transform: translateX(-100%);
+    transition: 0.4s ease;
+  }
+
+  .app-header-menu__close {
+   transform: scale(0.8) rotate(-45deg);
+   transition: .5s ease;
+  }
+
+  .app-header-menu-nav {
+    transform: translateY(-1rem);
+    transition: .6s ease;
+  }
+}
+
+
+// 활성화 상태
+// ──────────────────────────────────────────────────────────────────────────
+.app-header-menu.active {
+  opacity: 1;
+  visibility: visible;
+  user-select: initial;
+  pointer-events: initial;
+
+  .app-header-menu__content {
+    transform: translateX(0);
+  }
+
+  .app-header-menu__close {
+    transform: scale(1); 
+   }
+
+  .app-header-menu-nav {
+    transform: translateY(0);
+  }
+}

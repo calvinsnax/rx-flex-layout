@@ -1,0 +1,70 @@
+<load target="header-menu.js" type="body" />
+<load target="header-menu.scss" vars="$theme->variables" />
+
+<div class="app-header-menu">
+  <div class="app-header-menu__content">
+    <button class="app-header-menu__close app-header-menu__toggle">
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+    <div cond="!$logged_info" class="app-header-menu__auth">
+      <script>
+        function onClickHeaderMenuLogin() {
+          toggleDialog('app-login-form');
+  
+          jQuery(function($) {
+            $('.app-header-menu').removeClass('active')
+          });
+        }
+      </script>
+      
+      <a class="app-login" onclick="onClickHeaderMenuLogin()">로그인이 필요합니다.</a>
+      
+      <a class="app-signup" href="{getUrl('act','dispMemberSignUpForm')}" >{$lang->cmd_signup}</a>
+    </div>
+
+    <nav class="app-header-menu-nav" cond="$global_menu->list">
+      <ul>
+        <li loop="$global_menu->list=>$key1,$val1" class="active"|cond="$val1['selected']" is-divider|cond="$val1['link'] == '/'">
+          <div class="app-header-menu-nav-item">
+            <a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'" title="{$val1['link']}">
+              <ion-icon cond="$val1['desc']" name="{$val1['desc']}"></ion-icon>
+              <span>{$val1['link']}</span>
+            </a>
+      
+            <ion-icon cond="$val1['list']" name="chevron-down-outline" class="app-header-menu-nav-more"></ion-icon>
+          </div>
+
+          <div cond="$val1['list']" class="app-header-menu-nav-child"|cond="!$val1['selected']" class="app-header-menu-nav-child active"|cond="$val1['selected']">
+            <ul>
+              <li loop="$val1['list']=>$key2,$val2" class="active"|cond="$val2['selected']" is-divider|cond="$val2['link'] == '/'">
+                <a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">
+                  <ion-icon cond="$val2['desc']" name="{$val2['desc']}"></ion-icon>
+                  <span>{$val2['link']}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </li>
+      </ul>
+    </nav>
+  
+    <!-- <ul class="app-header-menu__nav">
+      <li loop="$global_menu->list=>$key1,$val1" class="active"|cond="$val1['selected']">
+        <a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'">
+          <span>{$val1['link']}</span>
+          <ion-icon cond="$val1['list']" name="chevron-down-outline"></ion-icon>
+        </a>
+    
+        <ul cond="$val1['list']" class="app-header-nav-child">
+          <li loop="$val1['list']=>$key2,$val2" class="active"|cond="$val2['selected']">
+            <a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">{$val2['link']}</a>
+          </li>
+        </ul>
+      </li>
+    </ul> -->
+  </div>
+
+  <button class="app-header-menu__outside app-header-menu__toggle"></button>
+</div>

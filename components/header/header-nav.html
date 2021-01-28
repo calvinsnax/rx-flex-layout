@@ -1,0 +1,22 @@
+<load target="header-nav.scss" vars="$theme->variables" />
+
+<nav class="app-header-nav" cond="$global_menu->list">
+  <ul>
+    <li loop="$global_menu->list=>$key1,$val1" class="active"|cond="$val1['selected']" is-divider|cond="$val1['link'] == '/'">
+      <a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'" class="app-header-nav-icon"|cond="$val1['desc']" title="{$val1['link']}"|cond="$val1['desc']">
+        <ion-icon cond="$val1['desc']" name="{$val1['desc']}"></ion-icon>
+        <span>{$val1['link']}</span>
+        <ion-icon cond="$val1['list']" name="chevron-down-outline" class="app-header-nav-more"></ion-icon>
+      </a>
+  
+      <ul cond="$val1['list']" class="app-header-nav-child">
+        <li loop="$val1['list']=>$key2,$val2" class="active"|cond="$val2['selected']" is-divider|cond="$val2['link'] == '/'">
+          <a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">
+            <ion-icon cond="$val2['desc']" name="{$val2['desc']}"></ion-icon>
+            <span>{$val2['link']}</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

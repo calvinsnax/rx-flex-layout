@@ -1,0 +1,59 @@
+<load target="header-login-form.scss" vars="$theme->variables" />
+
+<!-- <div cond="$XE_VALIDATOR_MESSAGE && $XE_VALIDATOR_ID == 'layouts/slow'" class="eq alert {$XE_VALIDATOR_MESSAGE_TYPE}">
+  <p>{$XE_VALIDATOR_MESSAGE}</p>
+</div> -->
+
+<form class="app-login" ruleset="@login" action="{getUrl()}" method="post" autocomplete="off">
+  <input type="hidden" name="success_return_url" value="{$referer_url}" />
+  <input type="hidden" name="act" value="procMemberLogin" />
+  <input type="hidden" name="xe_validator_id" value="layouts/slow" />
+
+    <!--@if($layout_info->login_option === 'Y')-->
+    <input id="id" class="app-input app-expand" type="text" name="user_id" placeholder="아이디" required tabindex="1" />
+    <!--@else-->
+    <input id="email" class="app-input app-expand" type="text" name="user_id" placeholder="이메일 주소" required tabindex="1" />
+    <!--@end-->
+    
+    <input class="app-input app-expand" type="password" name="password" placeholder="비밀번호" required tabindex="2" />
+
+    <div class="app-login-options">
+      <input class="app-checkbox" type="checkbox" name="keep_signed" id="keepid-optn" data-lang="{$lang->about_keep_warning}" value="Y" tabindex="3" />
+      <label for="keepid-optn">로그인 상태 유지</label>
+      
+      <div class="app-login-options__divider"></div>
+
+      <a class="app-link" href="{getUrl('act','dispMemberFindAccount')}" tabindex="5">{$lang->cmd_find_member_account}</a>
+    </div>
+
+    
+    <button type="submit" class="app-button app-expand app-primary app-plain" tabindex="4">로그인</button>
+  
+</form>
+
+<div class="app-login__register-message">
+  <span>아직 회원이 아니신가요?</span>
+  <a href="{getUrl('act','dispMemberSignUpForm')}" class="app-link app-primary" tabindex="6">회원가입 하기</a>
+</div>
+
+<div cond="$layout_info->social_login=='Y'" class="app-social-login-group">
+  <a class="app-social-google" href="{$oSocialxeModel->snsAuthUrl('google', 'login')}" cond="in_array('google',$layout_info->social_login_service)">
+    <img src="../../../assets/images/ic_brand_google.svg" alt="ic_brand_google.svg" width="14" height="14">
+  </a>
+
+  <a class="app-social-facebook" href="{$oSocialxeModel->snsAuthUrl('facebook', 'login')}" cond="in_array('facebook',$layout_info->social_login_service)">
+    <ion-icon name="logo-facebook"></ion-icon>
+  </a>
+
+  <a class="app-social-kakao" href="{$oSocialxeModel->snsAuthUrl('kakao', 'login')}" cond="in_array('kakao',$layout_info->social_login_service)">
+    <img src="../../../assets/images/ic_brand_kakao.svg" alt="ic_brand_kakao.svg" width="14" height="14">
+  </a>
+
+  <a class="app-social-naver" href="{$oSocialxeModel->snsAuthUrl('naver', 'login')}" cond="in_array('naver',$layout_info->social_login_service)">
+    <img src="../../../assets/images/ic_brand_naver.svg" alt="ic_brand_naver.svg" width="14" height="14">
+  </a>
+
+  <a class="app-social-twitter" href="{$oSocialxeModel->snsAuthUrl('twitter', 'login')}" cond="in_array('twitter',$layout_info->social_login_service)">
+    <ion-icon name="logo-twitter"></ion-icon>
+  </a>
+</div>

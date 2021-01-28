@@ -1,0 +1,36 @@
+<load target="header.scss" vars="$theme->variables" />
+
+<header class="app-header">
+  <div class="app-header-container">
+    <include target="header-logo.html" />
+    <include target="header-nav.html" />
+
+    <div class="app-header__divider"></div>
+
+    <include target="header-right/header-right.html" />
+
+    <include target="header-menu/header-menu-icon.html" />
+  </div>
+</header>
+
+<include target="header-menu/header-menu.html" />
+
+<div id="app-login-form" class="app-dialog">
+  <div class="app-dialog-container">
+    <div class="app-dialog-box">
+      <div class="app-dialog-header">
+        <button class="app-dialog-close">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+
+        <h3>{$lang->cmd_login}</h3>
+      </div>
+
+      <div class="app-dialog-body">
+        <include target="header-right/header-login-form.html" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<include cond="$li->header_search !== 'N'" target="header-right/header-search-form.html" />

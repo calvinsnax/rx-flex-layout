@@ -1,0 +1,132 @@
+.app-header-nav {
+  position: relative;
+  margin-left: 2.5rem;
+  height: 100%;
+
+  @media (max-width: $mobile-w) {
+    display: none;
+  }
+}
+.app-header-nav > ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+
+  & > li {
+    position: relative;
+    height: 100%;
+    margin-right: 0.5rem;
+
+    & > a {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0.75rem 0.75rem;
+      
+      color: $color-grey-050;
+      font-size: 1rem;
+      font-weight: 400;
+      text-decoration: none;
+      text-transform: uppercase;
+      vertical-align: middle;
+      transition: 0.2s ease;
+
+      .app-header-nav-more {
+        color: $color-grey-040;
+        font-size: 1rem;
+        margin-left: 0.25rem;
+        --ionicon-stroke-width: 3rem;
+      }
+
+      &:hover {
+        color: $color-grey-070;
+      }
+    }
+
+    &.active > a {
+      color: $color-grey-080;
+      font-weight: 600;
+    }
+  }
+}
+
+.app-header-nav-child {
+  position: absolute;
+  top: 90%;
+  left: 0;
+
+  list-style-type: none;
+  max-height: 400px;
+  min-width: 150px;
+  padding: 8px;
+  margin: 0;
+  overflow-y: auto;
+
+  border-radius: $border-radius-1;
+  background-color: $color-grey-005;
+  box-shadow: rgba(black, 0.05) 0 1px 4px, rgba(black, 0.1) 0 8px 24px;
+
+  transform: translateY(-0.25rem);
+  transition: .3s ease;
+
+  @if $dark-mode {
+    border: 1px solid $color-grey-010;
+  }
+
+  & > li {
+    margin-bottom: 0.25rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    & > a {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0.75em;
+
+      color: $color-grey-060;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+
+      border-radius: 4px;
+
+      transition: .2s ease;
+
+      &:hover {
+        color: $color-black;
+        background-color: $color-grey-020;
+
+        @if $dark-mode {
+          background-color: $color-grey-010;
+        }
+      }
+    }
+
+    &.active > a {
+      color: $color-primary;
+    }
+  }
+}
+
+.app-header-nav-child {
+  opacity: 0;
+  visibility: hidden;
+  user-select: none;
+  pointer-events: none;
+}
+
+.app-header-nav > ul > li > a:hover + .app-header-nav-child,
+.app-header-nav-child:hover {
+  opacity: 1;
+  visibility: visible;
+  user-select: initial;
+  pointer-events: initial;
+
+  transform: translateY(0);
+}

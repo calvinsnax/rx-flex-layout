@@ -1,0 +1,18 @@
+<a cond="$li->header_search !== 'N'" class="app-header-item" onclick="toggleDialog('app-search-form')">
+  <ion-icon name="search-outline"></ion-icon>
+</a>
+
+{@
+  $heaer_darkmode_text = "다크 모드로 전환";
+
+  if($is_darkmode)
+    $heaer_darkmode_text = "라이트 모드로 전환";
+}
+
+<a cond="!$layout_info->color_scheme" class="app-header-item app-tooltip" onclick="onClickDarkThemeToggle()" title="{$heaer_darkmode_text}">
+  <ion-icon cond="$is_darkmode" name="sunny-outline"></ion-icon>
+  <ion-icon cond="!$is_darkmode" name="contrast-outline"></ion-icon>
+</a>
+
+<include cond="!$logged_info" target="header-login.html" />
+<include cond="$logged_info" target="header-profile.html" />

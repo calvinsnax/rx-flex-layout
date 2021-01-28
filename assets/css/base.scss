@@ -1,0 +1,87 @@
+html {
+  font-size: 16px;
+
+  color: $color-grey-080;
+  background-color: $color-background;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, table, input, textarea, select, button {
+  font-family: $font-family;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+ion-icon {
+  vertical-align: middle;
+}
+
+.btn {
+  height: 26px !important;
+}
+
+.app-container {
+  width: 100%;
+  max-width: $base-container + ($base-padding * 2);
+  padding-left: $base-padding;
+  padding-right: $base-padding;
+  margin: 0 auto;
+
+  @media (max-width: $mobile-w) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  zoom: 1;
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+.app-clearfix {
+  zoom: 1;
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+.xefu-container {
+  color: black;
+  font-size: 13px;
+  background-color: white;
+}
+
+// 관리자 페이지 전용 처리
+main > .x {
+  max-width: $base-container;
+  padding: $base-padding;
+  margin: 0 auto;
+
+  color: black;
+  background-color: white;
+  border-radius: $border-radius-2;
+}
+
+::selection {
+  color: white;
+  background-color: $color-primary;
+}

@@ -1,0 +1,19 @@
+<load target="footer.scss" vars="$theme->variables" />
+
+<footer class="app-footer">
+  <div class="app-container">
+    <ul cond="$footer_menu->list" class="app-footer-nav">
+      <li loop="$footer_menu->list=>$key1,$val1" class="active"|cond="$val1['selected']">
+        <a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'">{$val1['link']}</a>
+      </li>
+    </ul>
+  
+    <div class="app-footer-copyright">
+      <!--@if($layout_info->footer_copyright)-->
+      {$layout_info->footer_copyright}
+      <!--@else-->
+      ⓒ 2020 CALVINSNAX.
+      <!--@end-->
+    </div>
+  </div>
+</footer>

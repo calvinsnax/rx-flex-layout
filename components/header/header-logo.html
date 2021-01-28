@@ -1,0 +1,26 @@
+{@
+  $header_url = getUrl('');
+  
+  if($layout_info->logo_url)
+    $header_url = $layout_info->logo_url;
+}
+
+<a class="app-header-logo" href="{$header_url}">
+  <!--@if($layout_info->logo_img)-->
+
+    <!--@if($is_darkmode && $layout_info->logo_img_dark)-->
+    <img src="{$layout_info->logo_img_dark}" alt="{$layout_info->logo_text}"|cond="$layout_info->logo_text">
+    <!--@else-->
+    <img src="{$layout_info->logo_img}" alt="{$layout_info->logo_text}"|cond="$layout_info->logo_text">
+    <!--@end-->
+
+  <!--@else if($layout_info->logo_text)-->
+
+  {$layout_info->logo_text}
+
+  <!--@else-->
+
+  <span>FLEX</span>
+
+  <!--@end-->
+</a>

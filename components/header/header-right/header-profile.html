@@ -1,0 +1,86 @@
+<div class="app-dropdown">
+  {@ // 프로필 이미지 }
+  <a class="app-dropdown-toggle app-header-profile">
+    <!--@if($logged_info->profile_image->src)-->
+    <img src="{$logged_info->profile_image->src}" alt="{$logged_info->nick_name}" class="eq border-circle text-middle" width="40" height="40" />
+    <!--@else-->
+    <ion-icon name="person-outline"></ion-icon>
+    <!--@end-->
+  </a>
+
+  {@ // 메뉴 }
+  <div class="app-dropdown-menu app-right">
+    <ul>
+      <li cond="$logged_info->is_admin == 'Y'">
+        <a href="{getUrl('', 'module', 'admin')}" target="_blank" title="{$lang->cmd_management}">
+          <ion-icon name="settings-outline"></ion-icon>
+          <span>{$lang->cmd_management}</span>
+        </a>
+      </li>
+
+      <li cond="$grant->manager">
+        <a href="{getUrl('','module','admin','act','dispLayoutAdminModify','layout_srl',$layout_info->layout_srl)}" onclick="window.open(this.href);return false;">
+          <ion-icon name="hammer-outline"></ion-icon>
+          <span>레이아웃 수정</span>
+        </a>
+      </li>
+      <li cond="$grant->manager">
+        <a href="{getUrl('','module','admin','act','dispWidgetAdminDownloadedList')}" onclick="window.open(this.href);return false;">
+          <ion-icon name="code-outline"></ion-icon>
+          <span>위젯코드 생성</span>
+        </a>
+      </li>
+      <li cond="$grant->manager">
+        <a href="{getUrl('','module','admin','act','dispMenuAdminSiteMap')}" onclick="window.open(this.href);return false;">
+          <ion-icon name="list-outline"></ion-icon>
+          <span>사이트 메뉴 편집</span>
+        </a>
+      </li>
+      
+      <li cond="$grant->manager" class="app-divider"></li>
+
+      <li>
+        <a href="{getUrl('act', 'dispMemberInfo','member_srl','')}">
+          <ion-icon name="person-outline"></ion-icon>
+          <span>마이페이지</span>
+        </a>
+      </li>
+      <li>
+        <a href="{getUrl('act', 'dispMemberScrappedDocument', 'page','')}">
+          <ion-icon name="bookmark-outline"></ion-icon>
+          <span>스크랩</span>
+        </a>
+      </li>
+      <li>
+        <a href="{getUrl('act', 'dispMemberOwnDocument', 'page','')}">
+          <ion-icon name="document-text-outline"></ion-icon>
+          <span>작성글</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="{getUrl('act', 'dispMemberOwnComment ', 'page','')}">
+          <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+          <span>작성댓글</span>
+        </a>
+      </li>
+
+      <li cond="!$layout_info->color_scheme">
+        <a onClick="onClickDarkThemeToggle()">
+          <ion-icon cond="$is_darkmode" name="sunny-outline"></ion-icon>
+          <ion-icon cond="!$is_darkmode" name="contrast-outline"></ion-icon>
+          <span>다크모드 전환</span>
+        </a>
+      </li>
+
+      <li class="app-divider"></li>
+
+      <li>
+        <a href="{getUrl('act', 'dispMemberLogout')}" class="eq more">
+          <ion-icon name="lock-open-outline"></ion-icon>
+          <span>{$lang->cmd_logout}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

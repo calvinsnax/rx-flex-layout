@@ -1,0 +1,25 @@
+.app-main {
+  padding: 2rem;
+
+  zoom: 1;
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+
+  @media (max-width: $mobile-w) {
+    display: block;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  // 게시판 설정 등 관리자 페이지 다크모드로부터 독립화
+  & .x {
+    padding: 1rem;
+    background-color: white;
+    border-radius: $border-radius-1;
+  }
+}

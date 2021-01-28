@@ -1,0 +1,42 @@
+{@ // PHP Variables }
+<include cond="!$theme" target="assets/php/config.php" />
+
+{@ 
+  $li = $layout_info;
+
+  // 컬러모드 구분을 위한 쿠키 체크
+  if(!$layout_info->color_scheme && $_COOKIE['is_dark_theme'])
+    $color_scheme = $_COOKIE['is_dark_theme'];
+
+  // 컬러 모드
+  if($color_scheme !== "light")
+    $is_darkmode = $color_scheme;
+
+  // theme 선언
+  $theme = new theme();
+  $theme->variables = $theme->getVariables($is_darkmode);
+
+  // 컬러 모드를 변수로 전달
+  $theme->variables['dark-mode'] = $is_darkmode;
+
+  // 레이아웃 설정을 변수로 전달
+  if($layout_info->primary_color)
+    $theme->variables['color-primary'] = $layout_info->primary_color;
+}
+
+{@ // 외부 라이브러리 }
+<load target="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js" type="body" />
+<load target="assets/js/jquery.cookie.js" type="body" />
+
+{@ // BASE CSS IMPORT }
+<load target="assets/css/base.scss" vars="$theme->variables" />
+<load target="assets/css/typography.scss" vars="$theme->variables" />
+<load target="assets/css/layout.scss" vars="$theme->variables" />
+<load target="assets/css/input.scss" vars="$theme->variables" />
+<load target="assets/css/checkbox.scss" vars="$theme->variables" />
+<load target="assets/css/button.scss" vars="$theme->variables" />
+<load target="assets/css/link.scss" vars="$theme->variables" />
+
+{@ // Components }
+<include target="components/common/dropdown/dropdown.html" />
+<include target="components/common/dialog/dialog.html" />

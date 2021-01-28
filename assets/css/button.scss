@@ -1,0 +1,131 @@
+.app-button {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin: 0;
+  
+  color: $color-grey-080;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  
+  outline: none;
+  border-radius: $border-radius-1;
+  border: none;
+  background-color: $color-grey-020;
+  box-sizing: border-box;
+
+  transition: .2s ease;
+  
+  &:hover {
+    color: $color-black;
+    background-color: $color-grey-030;
+    text-decoration: none;
+  }
+  &:active {
+    background-color: $color-grey-040;
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+
+  i, ion-icon {
+    font-size: 1.25rem;
+    & + span {
+      margin-left: 0.5rem;
+    }
+  }
+
+  &.app-rounded {
+    border-radius: 5rem;
+  }
+
+  &.app-sm {
+    height: 2.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  &.app-xs {
+    height: 1.875rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+
+    font-size: 0.75rem;
+  }
+}
+
+
+// COLOR (default)
+.app-button {
+  &.app-primary {
+    color: $color-text-primary;
+    background-color: $color-primary;
+
+    &:hover {
+      background-color: mix(black, $color-primary, 10%);
+    }
+    &:active {
+      background-color: mix(black, $color-primary, 20%);
+    }
+  }
+  &.app-black {
+    color: $color-white;
+    background-color: $color-black;
+  }
+  &.app-expand {
+    display: flex;
+    width: 100%;
+  }
+}
+
+// COLOR (plain)
+@mixin applyPlainButton($color) {
+  @if $dark-mode {
+  } @else {
+    color: $color;
+    background-color: mix($color, $color-white, 20%);
+    &:hover {
+      background-color: mix($color, $color-white, 25%);
+    }
+    &:active {
+      background-color: mix($color, $color-white, 30%);
+    }
+  }
+}
+
+.app-button.app-plain {
+  &.app-primary {
+    @include applyPlainButton($color-primary)
+  }
+}
+
+
+// Button Group
+.app-button-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .app-button {
+    border-radius: 0;
+    border-right: 1px solid $color-grey-005;
+  }
+
+  & > *:first-child,
+  .al-first-child {
+    border-top-left-radius: $border-radius-1;
+    border-bottom-left-radius: $border-radius-1;
+  }
+  & > *:last-child,
+  .al-last-child {
+    border-top-right-radius: $border-radius-1;
+    border-bottom-right-radius: $border-radius-1;
+    border-right: none;
+  }
+}

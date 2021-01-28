@@ -1,0 +1,97 @@
+.app-login {
+  .app-input {
+    margin-bottom: 0.75rem;
+  }
+
+  &-options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    &__divider {
+      flex: 1;
+    }
+  }
+
+  .app-button[type="submit"] {
+    margin-bottom: 1rem;
+  }
+
+  &__register-message {
+    color: $color-grey-050;
+    font-size: 0.875rem;
+    text-align: center;
+
+    & > span {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+
+$color-social-google: #e05353;
+$color-social-naver: #4aad39;
+$color-social-facebook: #4378e2;
+$color-social-kakao: #f7e542;
+$color-social-twitter: #56aef7;
+
+.app-social-login-group {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  margin: -0.5rem;
+
+  & > a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    padding: 0 1rem;
+    margin: 0.5rem;
+
+    color: $color-text-primary;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: $border-radius-1;
+
+    & > span {
+      margin-left: 1rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .app-social-google {
+    color: $color-social-google;
+    background-color: $color-background;
+    border: 1px solid $color-grey-030;
+  }
+  
+  .app-social-facebook {
+    color: $color-text-primary;
+    border-color: $color-social-facebook;
+    background-color: $color-social-facebook;
+  }
+  
+  .app-social-kakao {
+    color: #713d3d;
+    border-color: $color-social-kakao;
+    background-color: $color-social-kakao;
+  }
+
+  .app-social-naver {
+    color: $color-text-primary;
+    border-color: $color-social-naver;
+    background-color: $color-social-naver;
+  }
+
+  .app-social-twitter {
+    color: $color-text-primary;
+    border-color: $color-social-twitter;
+    background-color: $color-social-twitter;
+  }
+}

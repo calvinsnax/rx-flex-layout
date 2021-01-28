@@ -1,0 +1,37 @@
+{@ // 의존성 파일 import }
+<include target="_import.html" />
+
+{@ // 플러그인 }
+<include target="plugins/tooltip/tooltip.html" />
+
+{@ // 반응형 뷰포트 설정 }
+{Context::addMetaTag("viewport", "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")}
+
+{@ // 브라우저 테마 컬러 지정 }
+{Context::addMetaTag("theme-color", $theme->variables['color-primary'])}
+
+{@ // 소셜 로그인 관련 }
+<block cond="$layout_info->social_login == 'Y'">
+  {@
+    // SOCAIL XE
+    $oSocialxeModel = getModel('socialxe');
+    if(!$layout_info->social_login_service) $layout_info->social_login_service = array();
+  }
+</block>
+
+{@ // 로그인 관련 오류 메시지 출력 }
+<script cond="$XE_VALIDATOR_MESSAGE && $XE_VALIDATOR_ID == 'layouts/alice'" >
+  alert('{$XE_VALIDATOR_MESSAGE}')
+</script>
+
+{@ // 다크 모드 전환 코드 }
+<script>
+  function onClickDarkThemeToggle() {
+    const isDarkTheme = $.cookie('is_dark_theme');
+    
+    if(isDarkTheme === 'true') $.cookie('is_dark_theme', '', { path: '/' });
+    else $.cookie('is_dark_theme', true, { path: '/' });
+
+    window.location.reload()
+  }
+</script>
