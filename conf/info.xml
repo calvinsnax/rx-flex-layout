@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout version="0.2">
   <title xml:lang="ko">FLEX</title>
-  <description xml:lang="ko">Rhymix 전용 레이아웃</description>
-  <version>1.0.0</version>
-  <date>2020-09-14</date>
+  <description xml:lang="ko">다크모드를 지원하는 Rhymix 전용 오픈소스 레이아웃</description>
+  <version>1.0.1</version>
+  <date>2021-01-29</date>
   <author email_address="hello@calvinsnax.com" link="https://calvinsnax.com/">
     <name xml:lang="ko">C Λ L V I N - S N Λ X</name>
   </author>
