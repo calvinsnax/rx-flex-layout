@@ -31,12 +31,17 @@ $header-blur: saturate(180%) blur(5px);
   width: 100%;
   height: 100%;
 
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: $base-padding;
+  padding-right: $base-padding;
 
   @media (max-width: $mobile-w) {
     padding-left: 1rem;
     padding-right: 0.5rem;
+  }
+
+  header[expand] & {
+    max-width: $base-container;
+    margin: 0 auto;
   }
 }
 

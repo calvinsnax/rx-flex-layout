@@ -3,7 +3,7 @@
     // 변수 시스템
     public function getVariables($darkMode) {
       $base = array(
-        'base-container' => '1280px',
+        'base-container' => '1200px',
         'base-padding' => '2rem',
       );
 

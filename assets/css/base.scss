@@ -33,7 +33,7 @@ ion-icon {
 
 .app-container {
   width: 100%;
-  max-width: calc(#{$base-container} + (#{$base-padding} * 2));
+  max-width: $base-container;
   padding-left: $base-padding;
   padding-right: $base-padding;
   margin: 0 auto;
