@@ -1,13 +1,13 @@
 <load target="header.scss" vars="$theme->variables" />
 
 {@
-  $header_expand = 'false';
-  if($layout_info->header_container_expand == 'N'):
-    $header_expand = 'true';
+  $header_expand = '';
+  if($layout_info->header_container_expand != 'N'):
+    $header_expand = 'app-header--expand';
   endif;
 }
 
-<header class="app-header" expand="Y"|cond="$layout_info->header_container_expand != 'N'">
+<header class="app-header {$header_expand}">
   <div class="app-header-container">
     <include target="header-logo.html" />
     <include target="header-nav.html" />
