@@ -6,10 +6,36 @@
 
 <include target="components/header/header.html" />
 
-<main>
-  <include target="components/board-thumbnail/board-thumbnail.html" />
-  <div class="app-main app-container">{$content}</div>
-</main>
+{@
+  $design_grid_style = '';
+  if($layout_info->design_grid_style == 'Y'):
+    $design_grid_style = 'app--grid-style';
+  endif;
+}
 
-<include target="components/footer/footer.html" />
+<div class="{$design_grid_style}">
+  <main class="app-main">
+    {@
+      $content_tight = '';
+      if($layout_info->container_padding_tight == 'Y'):
+        $content_tight = 'app-content--tight';
+      endif;
+    }
+  
+    <include target="components/board-thumbnail/board-thumbnail.html" />
+    <div class="app-content app-container {$content_tight}">{$content}</div>
+  </main>
+  
+  <div class="app-layout-lines app-layout-bg" cond="$layout_info->design_grid_style == 'Y'">
+    <div class="app-layout-lines__col"></div>
+    <div class="app-layout-lines__col"></div>
+    <div class="app-layout-lines__col"></div>
+    <div class="app-layout-lines__col"></div>
+    <div class="app-layout-lines__col"></div>
+  </div>
+  
+  <include target="components/footer/footer.html" />
+</div>
+
+
 <include target="components/ie-message.html" />

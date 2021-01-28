@@ -41,16 +41,18 @@ $header-blur: saturate(180%) blur(5px);
 
   max-width: $base-container;
   margin: 0 auto;
-  padding-left: $base-padding;
-  padding-right: $base-padding;
-
-  @media (max-width: $mobile-w) {
-    padding-left: 1.25rem;
-    padding-right: 0.75rem;
-  }
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   .app-header--expand & {
     max-width: 100%;
+    padding-left: $base-padding;
+    padding-right: $base-padding;
+  }
+
+  @media (max-width: $mobile-w) {
+    padding-left: 1.25rem !important;
+    padding-right: 0.5rem !important;
   }
 }
 
