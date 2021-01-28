@@ -14,7 +14,7 @@ $header-blur: saturate(180%) blur(5px);
   width: 100%;
   height: $header-height;
 
-  background-color: rgba($color-gray-050, 0.8);
+  background-color: rgba($color-gray-050, 0.9);
   -webkit-backdrop-filter: $header-blur;
   backdrop-filter: $header-blur;
 
