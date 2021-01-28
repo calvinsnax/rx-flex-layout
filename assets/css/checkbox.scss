@@ -8,7 +8,7 @@
     align-items: center;
     margin-right: 0.5rem;
     
-    color: $color-grey-050;
+    color: $color-gray-500;
     font-size: 14px;
     font-weight: 500;
     line-height: 22px;
@@ -28,14 +28,14 @@
       background-size:10px auto;
     
       border-radius: 4px;
-      border: 1px solid $color-grey-030;
+      border: 1px solid $color-gray-300;
       vertical-align: middle;
-      background-color: $color-grey-005;
+      background-color: $color-gray-050;
       transition: 0.2s ease;
     }
   
     &:hover:before {
-      border-color: $color-grey-040;
+      border-color: $color-gray-400;
     }
     &:active:before {
       border-color: $color-primary;

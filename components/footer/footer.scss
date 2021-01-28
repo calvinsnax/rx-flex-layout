@@ -2,11 +2,11 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
 
-  background-color: $color-grey-020;
+  background-color: $color-gray-200;
 
   @if $dark-mode {
-    background-color: $color-grey-005;
-    border-top: 1px solid $color-grey-010;
+    background-color: $color-gray-050;
+    border-top: 1px solid $color-gray-100;
   }
 
   .app-footer-nav {
@@ -25,10 +25,10 @@
         width: 1px;
         height: 8px;
         margin: 0 0.25rem;
-        border-right: 1px solid $color-grey-040;
+        border-right: 1px solid $color-gray-400;
 
         @if $dark-mode {
-          border-right: 1px solid $color-grey-020;
+          border-right: 1px solid $color-gray-200;
         }
       }
 
@@ -37,7 +37,7 @@
       }
 
       & > a {
-        color: $color-grey-060;
+        color: $color-gray-600;
         font-size: 0.75rem;
         text-decoration: none;
       }
@@ -45,7 +45,7 @@
   }
 
   .app-footer-copyright {
-    color: $color-grey-050;
+    color: $color-gray-500;
     font-size: 0.75rem;
   }
 }

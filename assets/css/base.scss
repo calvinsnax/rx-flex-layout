@@ -1,7 +1,7 @@
 html {
   font-size: 16px;
 
-  color: $color-grey-080;
+  color: $color-gray-800;
   background-color: $color-background;
 }
 
@@ -33,7 +33,7 @@ ion-icon {
 
 .app-container {
   width: 100%;
-  max-width: $base-container + ($base-padding * 2);
+  max-width: calc(#{$base-container} + (#{$base-padding} * 2));
   padding-left: $base-padding;
   padding-right: $base-padding;
   margin: 0 auto;

@@ -8,7 +8,7 @@
   padding-right: 1.25rem;
   margin: 0;
   
-  color: $color-grey-080;
+  color: $color-gray-800;
   text-align: center;
   font-size: 0.875rem;
   font-weight: 600;
@@ -17,18 +17,18 @@
   outline: none;
   border-radius: $border-radius-1;
   border: none;
-  background-color: $color-grey-020;
+  background-color: $color-gray-200;
   box-sizing: border-box;
 
   transition: .2s ease;
   
   &:hover {
     color: $color-black;
-    background-color: $color-grey-030;
+    background-color: $color-gray-300;
     text-decoration: none;
   }
   &:active {
-    background-color: $color-grey-040;
+    background-color: $color-gray-400;
   }
 
   &:focus {
@@ -114,7 +114,7 @@
 
   .app-button {
     border-radius: 0;
-    border-right: 1px solid $color-grey-005;
+    border-right: 1px solid $color-gray-050;
   }
 
   & > *:first-child,

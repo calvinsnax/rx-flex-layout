@@ -14,7 +14,7 @@ $header-blur: saturate(180%) blur(5px);
   width: 100%;
   height: $header-height;
 
-  background-color: $color-grey-005;
+  background-color: $color-gray-050;
 
   @media (max-width: $mobile-w) {
     height: 52px;
@@ -45,7 +45,7 @@ $header-blur: saturate(180%) blur(5px);
   display: block;
   max-height: $header-height;
 
-  color: $color-grey-080;
+  color: $color-gray-800;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1;
@@ -58,7 +58,7 @@ $header-blur: saturate(180%) blur(5px);
     display: block;
     width: auto;
     height: 2.875rem;
-    fill: $color-grey-080;
+    fill: $color-gray-800;
 
     @media (max-width: $mobile-w) {
       height: 2.5rem;
@@ -67,7 +67,7 @@ $header-blur: saturate(180%) blur(5px);
 }
 
 .app-header__signup {
-  color: $color-grey-060;
+  color: $color-gray-600;
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
@@ -130,7 +130,7 @@ $header-blur: saturate(180%) blur(5px);
   padding: 0.5rem;
   margin-right: 0.5rem;
 
-  color: $color-grey-060;
+  color: $color-gray-600;
   font-size: 1rem;
   text-decoration: none;
 
@@ -172,9 +172,9 @@ $header-blur: saturate(180%) blur(5px);
   margin-left: 0.5rem;
   border-radius: $border-radius-3;
 
-  color: $color-grey-060;
+  color: $color-gray-600;
   font-size: 1rem;
-  background-color: $color-grey-030;
+  background-color: $color-gray-300;
   overflow: hidden;
 
   --ionicon-stroke-width: 3rem;

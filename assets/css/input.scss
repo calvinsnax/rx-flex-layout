@@ -3,12 +3,12 @@
   padding-left: 16px;
   height: 40px;
 
-  color: $color-grey-080;
+  color: $color-gray-800;
   font-size: 14px;
   font-weight: 500;
   border-radius: 6px;
-  border: 1px solid $color-grey-020;
-  background-color: $color-grey-020;
+  border: 1px solid $color-gray-200;
+  background-color: $color-gray-200;
   box-sizing: border-box;
 
   appearance: none;
@@ -18,16 +18,16 @@
   transition: .2s ease;
 
   &::-webkit-input-placeholder {
-    color: $color-grey-050;
+    color: $color-gray-500;
   }
   &:-ms-input-placeholder {
-    color: $color-grey-050;
+    color: $color-gray-500;
   }
 
   &:focus {
     outline: none !important;
     border-color: $color-primary;
-    background-color: $color-grey-005;
+    background-color: $color-gray-050;
     box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
   }
 
